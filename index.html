@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Bürgerinitiative Schwarmstedt ist bunt">
+<title>Schwarmstedt ist bunt</title>
+</head>
+<style>
+    :root {
+        --bg: #fffaf2;
+        --ink: #233c35;
+        --muted: #68766c;
+        --orange: #ed704c;
+        --pink: #e95d8f;
+        --yellow: #f4c94e;
+        --green: #69a979;
+        --blue: #6497c8;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+            17px/1.65 system-ui,
+            sans-serif;
+    }
+    a {
+        color: inherit;
+    }
+    .container {
+        width: min(100% - 36px, 1000px);
+        margin: auto;
+		text-align: center;
+    }
+    header,
+    footer {
+        padding: 20px 0;
+        border-bottom: 1px solid #e8e0d3;
+    }
+    header .container,
+    footer .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+    nav {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+    nav a {
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+    .hero {
+        text-align: center;
+        padding: 100px 0;
+    }
+    .logo {
+        display: block;
+        width: min(220px, 70%);
+        height: auto;
+        margin: 0 auto 25px;
+        object-fit: contain;
+    }
+    h1 {
+        font-size: clamp(2.8rem, 9vw, 6.5rem);
+        line-height: 1;
+        letter-spacing: -0.06em;
+        margin: 20px 0;
+    }
+    h1 span {
+        background: linear-gradient(90deg, var(--orange), var(--pink), var(--blue), var(--green));
+        background-clip: text;
+        color: transparent;
+    }
+    .intro {
+        max-width: 600px;
+        margin: 25px auto;
+        color: var(--muted);
+    }
+    .button {
+        display: inline-block;
+        padding: 12px 22px;
+        background: var(--ink);
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+    }
+    section.content {
+        padding: 75px 0;
+    }
+    .manifest {
+        background: #f2ecdf;
+    }
+    h2 {
+        font-size: clamp(2rem, 5vw, 3.7rem);
+        line-height: 1.1;
+        margin: 0 0 25px;
+        text-align: center;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+    .card {
+        padding: 28px;
+        border-radius: 20px;
+        background: white;
+        text-align: center;
+    }
+    .card h3 {
+        font-size: clamp(1.4rem, 3vw, 2.2rem);
+        line-height: 1.2;
+        margin: 20px 0 0;
+    }
+    .card em {
+        color: var(--orange);
+        font-style: normal;
+    }
+    .social a {
+        display: block;
+        padding: 20px;
+        border: 1px solid #e8e0d3;
+        border-radius: 16px;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    .contact {
+        background: var(--ink);
+        color: white;
+    }
+    .contact a {
+        color: var(--yellow);
+    }
+    .small {
+        font-size: 0.9rem;
+        color: var(--muted);
+    }
+    .contact .small {
+        color: #d0d9d1;
+    }
+    .social-icons {
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+    }
+    .social-icon {
+        width: 65px;
+        height: 65px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 18px;
+        color: white;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+    .social-icon svg {
+        width: 32px;
+        height: 32px;
+        fill: currentColor;
+    }
+    .instagram {
+        background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    }
+    .facebook {
+        background: #1877f2;
+    }
+    .social-icon:hover {
+        transform: translateY(-6px) scale(1.08);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+    .social-icon:focus-visible {
+        outline: 3px solid currentColor;
+        outline-offset: 4px;
+    }
+	#social .social-icon {
+		display: flex;
+		padding: 0;
+	}
+    footer {
+        border: 0;
+        background: #192f29;
+        color: white;
+        font-size: 0.85rem;
+    }
+    @media (max-width: 600px) {
+        .hero {
+            padding: 70px 0;
+        }
+        .grid {
+            grid-template-columns: 1fr;
+        }
+        section.content {
+            padding: 55px 0;
+        }
+        header .container {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+
+
+</style>
+<body>
+
+<main>
+<section class="hero container" id="start">
+	<img src="logo.png" alt="Logo von Schwarmstedt ist bunt" class="logo">
+<h1>Schwarmstedt<br>ist<br><span>BUNT</span></h1>
+<p class="intro">
+Ihr sagt <i>Ausländer</i> - ich höre <b>Menschen</b><br>
+Ihr sagt <i>Flüchtlinge</i> - ich höre <b>Menschen</b><br>
+Ihr sagt <i>Arbeitslose</i> - ich höre <b>Menschen</b></p>
+</section>
+
+<section class="content manifest" id="manifest">
+<div class="container">
+<h2>Für uns geht …</h2>
+<div class="grid">
+<article class="card"><h3><em>HANDELN</em><br>über<br>meckern</h3></article>
+<article class="card"><h3><em>HELFEN</em><br>über<br>abschieben</h3></article>
+<article class="card"><h3><em>FRITZ</em><br>über<br>coca</h3></article>
+<article class="card"><h3><em>ZÄHLER</em><br>über<br>Nenner</h3></article>
+</div>
+</div>
+</section>
+
+<section class="content social" id="social">
+<div class="container">
+<h2>Social Media</h2>
+<div class="social-icons">
+  <a href="https://www.instagram.com/schwarmstedt.ist.bunt"
+     class="social-icon instagram"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Instagram">
+
+    <svg viewBox="0 0 24 24"
+         xmlns="http://www.w3.org/2000/svg"
+         fill="none">
+      <rect x="3" y="3" width="18" height="18" rx="5"
+            fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="12" cy="12" r="4"
+              fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+    </svg>
+
+  </a>
+  <a href="https://www.facebook.com/people/Schwarmstedt-Ist-Bunt/pfbid0RHaWDUqnzaTGNWCoMz3vwXSohrKmzSFLUPxVnWJTLaEi6hqE8ekLwHUYwHgLdUr4l"
+     class="social-icon facebook"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Facebook">
+
+    <svg viewBox="0 0 24 24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2
+               c0-.9.3-1.5 1.6-1.5h1.7V3.6
+               C16 3.4 15.1 3.3 14.1 3.3
+               c-2.8 0-4.6 1.7-4.6 4.8v1.8H7
+               V13h2.5v8h4z"/>
+    </svg>
+  </a>
+</div>
+</div>
+</section>
+
+<section class="content contact" id="kontakt">
+<div class="container">
+<h2>Kontakt</h2>
+<p><a href="mailto:info@schwarmstedtistbunt.de">info@schwarmstedtistbunt.de</a></p>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<span>© <span id="year"></span> Schwarmstedt ist bunt</span>
+<span>Bleib stabil!</span>
+</div>
+</footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>
